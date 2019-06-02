@@ -2,12 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Tracker, type: :model do
   context 'validação' do
-    subject do
-      described_class.new(
-        guid: "aa5bbb17-cdb9-4618-abfa-db6dd2e00844", url: "http://teste.com/home",
-        datetime: "2019-5-31 17:34:49"
-      )
-    end
+    subject { build(:tracker) }
     let(:saved) { subject.save }
     context 'guid' do
       it 'deve conter o campo `guid`' do
