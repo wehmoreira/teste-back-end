@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Relatório', :type => :request do
+RSpec.describe 'Geração do relatório de rastreamento', :type => :request do
   describe "GET #index" do
     context 'não possui nenhum rastreio salvo' do
       before { get '/trackers/index' }
