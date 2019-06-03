@@ -3,14 +3,14 @@ require 'rails_helper'
 RSpec.describe 'fluxo da página de contatos', :type => :request do
   describe "GET #index" do
     it "returns http success" do
-      get '/contacts/home'
+      get '/home'
       expect(response).to have_http_status(:success)
     end
   end
 
   describe "GET #sobre" do
     it "returns http success" do
-      get '/contacts/sobre'
+      get '/sobre'
       expect(response).to have_http_status(:success)
     end
   end
