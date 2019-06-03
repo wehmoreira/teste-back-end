@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'fluxo da página de contatos', :type => :request do
-
   describe "GET #new" do
     it "returns http success" do
       get :new
@@ -9,9 +8,9 @@ RSpec.describe 'fluxo da página de contatos', :type => :request do
     end
   end
 
-  describe "GET #create" do
+  describe "POST #create" do
     it "returns http success" do
-      get :create
+      post :create
       expect(response).to have_http_status(:success)
     end
   end
