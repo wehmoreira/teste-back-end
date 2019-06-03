@@ -15,6 +15,7 @@
 *.swp
 log/
 tmp/
+.ruby-gemset
 
 /node_modules
 /yarn-error.log
