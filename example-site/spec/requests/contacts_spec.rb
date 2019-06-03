@@ -1,7 +1,21 @@
 require 'rails_helper'
 
 RSpec.describe 'fluxo da página de contatos', :type => :request do
-  describe "GET #new" do
+  describe "GET #index" do
+    it "returns http success" do
+      get '/contacts/home'
+      expect(response).to have_http_status(:success)
+    end
+  end
+
+  describe "GET #sobre" do
+    it "returns http success" do
+      get '/contacts/sobre'
+      expect(response).to have_http_status(:success)
+    end
+  end
+
+ describe "GET #new" do
     it "returns http success" do
       get '/contacts/new'
       expect(response).to have_http_status(:success)

@@ -1,5 +1,11 @@
 class ContactsController < ApplicationController
+  def index
+  end
+
   def new
+  end
+
+  def sobre
   end
 
   def create
