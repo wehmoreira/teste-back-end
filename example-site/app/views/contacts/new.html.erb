@@ -1,8 +1,7 @@
 <h1>Contato</h1>
 <%= form_with scope: :contact, url: contacts_path, local: true do |form| %>
-  <p><%= form.label 'Nome:' %> <%= form.text_field :name %></p>
+  <p><%= form.label 'Nome:' %> <%= form.text_field :nome %></p>
   <p><%= form.label 'E-mail:' %> <%= form.text_field :email %></p>
-   <p><%= form.hidden_field :guid %></p>
   <p><%= form.submit 'Enviar' %></p>
 <% end %>
 

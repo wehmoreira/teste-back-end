@@ -14,9 +14,9 @@ RSpec.describe Contact, type: :model do
         expect(saved).to eq(false)
       end
     end
-    context 'name' do
-      it 'deve conter o campo `name`' do
-        subject.name = nil
+    context 'nome' do
+      it 'deve conter o campo `nome`' do
+        subject.nome = nil
         expect(saved).to eq(false)
       end
     end
@@ -25,6 +25,7 @@ RSpec.describe Contact, type: :model do
         subject.guid = nil
         expect(saved).to eq(false)
       end
+
       it 'valida a formatação de um guid' do
         subject.guid = "Lorem ipsum dolor sit amet"
         expect(saved).to eq(false)
