@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Contact, type: :model do
+describe Contact, type: :model do
   context 'validação' do
     subject { build(:contact) }
     let(:saved) { subject.save }
