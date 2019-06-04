@@ -1,2 +1,17 @@
-<h1>Trackers#index</h1>
-<p>Find me in app/views/trackers/index.html.erb</p>
+<h1>Relatório de rastreamento</h1>
+
+<table>
+  <tr>
+    <th>GUID do visitante</th>
+    <th>URL</th>
+    <th>Data/Hora</th>
+  </tr>
+
+  <% @trackers.each do |tracker| %>
+    <tr>
+      <td><%= tracker.guid %></td>
+      <td><%= tracker.url %></td>
+      <td><%= tracker.datetime %></td>
+    </tr>
+  <% end %>
+</table>
