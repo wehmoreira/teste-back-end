@@ -10,13 +10,13 @@ class ContactsController < ApplicationController
 
   def create
     @contact = Contact.new(permitted_params)
-    @contact.save ? flash[:success] = 'Contato incluído!' : flash[:error] = 'Erro ao cadastrar o contato!'
+    @contact.save ? flash[:success] = 'Contato incluído!' : flash[:error] = @contact.errors.full_messages.to_sentence
     redirect_to new_contact_path
   end
 
   private
 
   def permitted_params
-    params.require(:contact).permit(:email, :name, :guid)
+    params.require(:contact).merge('guid' => cookies['guid']).permit(:email, :nome, :guid)
   end
 end
