@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'funcionamento da API', :type => :request do
+describe 'funcionamento da API', :type => :request do
   describe "POST #create" do
     let(:request) { post '/api/v1/trackers', :params => { tracker: tracker_params } }
     let(:tracker_params) { FactoryBot.attributes_for(:tracker) }

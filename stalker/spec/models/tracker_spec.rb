@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Tracker, type: :model do
+describe Tracker, type: :model do
   context 'validação' do
     subject { build(:tracker) }
     let(:saved) { subject.save }
