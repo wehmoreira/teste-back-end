@@ -1,0 +1,16 @@
+<h1>Contatos</h1>
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>E-mail</th>
+    <th>GUID do visitante</th>
+  </tr>
+
+  <% @contacts.each do |contact| %>
+    <tr>
+      <td><%= contact.nome %></td>
+      <td><%= contact.email %></td>
+      <td><%= contact.guid %></td>
+    </tr>
+  <% end %>
+</table>
