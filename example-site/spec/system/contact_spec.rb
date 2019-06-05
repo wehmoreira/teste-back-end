@@ -1,8 +1,18 @@
 require 'rails_helper'
 
 describe 'cadastramento de contatos', type: :system, js: true do
-  before { visit '/contato' }
   let(:attrs) { attributes_for(:contact) }
+  context 'preenchendo com email já existente na base' do
+    it 'exibe mensagem de erro' do
+      email = create(:contact).email
+      visit '/contato'
+      fill_in 'contact[nome]', with: attrs[:nome]
+      fill_in 'contact[email]', with: email
+      click_button 'Enviar'
+      expect(page).to have_text 'Email já existente!'
+    end
+  end
+  before { visit '/contato' }
   context 'preenchendo somente o email' do
     it 'exibe mensagem de erro' do
       fill_in 'contact[email]', with: attrs[:email]
