@@ -11,7 +11,7 @@ class ContactsController < ApplicationController
   def create
     @contact = Contact.new(permitted_params)
     @contact.save ? flash[:success] = 'Contato incluído!' : flash[:error] = @contact.errors.full_messages.to_sentence
-    redirect_to new_contact_path
+    redirect_to '/contato'
   end
 
   private

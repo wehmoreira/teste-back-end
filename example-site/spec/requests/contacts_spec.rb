@@ -35,7 +35,7 @@ describe 'fluxo da página de contatos', :type => :request do
       context 'Página' do
         before { request }
         it 'redireciona para `new`' do
-          expect(response).to redirect_to('/contacts/new')
+          expect(response).to redirect_to('/contato')
         end
         it 'exibe informação de sucesso' do
           expect(flash[:success]).to be_present
