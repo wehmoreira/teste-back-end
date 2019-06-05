@@ -1,7 +1,8 @@
 FactoryBot.define do
+  require 'securerandom'
   factory :tracker do
-    guid { 'aa5bbb17-cdb9-4618-abfa-db6dd2e00844' }
+    guid { SecureRandom.uuid }
     url { "http://teste.com/#{['home', 'sobre', 'contato'].sample}" }
-    datetime { "2019-6-1 20:28:6" }
+    datetime { Time.now.strftime("%Y-%-m-%-d %-H:%-M:%-S") }
   end
 end

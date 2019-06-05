@@ -14,8 +14,7 @@ describe 'Geração do relatório de rastreamento', :type => :request do
     context 'possui rastreios salvos' do
       let(:ordered) { double(Tracker) }
       before do
-        allow(Tracker).to receive(:order).with(datetime: :asc).and_return(ordered)
-        allow(ordered).to receive(:limit).with(50).and_return(create_list(:tracker, 1+rand(4)))
+        allow(Tracker).to receive(:last).with(50).and_return(create_list(:tracker, 1+rand(4)))
         get '/trackers/index'
       end
       it 'não exibe mensagem' do

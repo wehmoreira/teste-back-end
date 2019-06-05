@@ -11,7 +11,7 @@ describe 'listagem de contatos', type: :system do
     it 'carrega múltiplos contatos' do
       create_list(:contact, 1+rand(5))
       visit '/contacts/index'
-      expect(page).to have_text('aa5bbb17-cdb9-4618-abfa-db6dd2e00844', between: 1..4)
+      expect(page).to have_text('aa5bbb17-cdb9-4618-abfa-db6dd2e00844', between: 1..5)
     end
   end
 end

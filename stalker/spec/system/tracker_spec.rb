@@ -9,16 +9,18 @@ describe 'listagem de rastreamentos', type: :system do
   end
   context 'um rastreamento' do
     it 'lista os dados de rastreamento' do
-      create(:tracker)
+      guid = create(:tracker).guid
       visit '/trackers/index'
-      expect(page).to have_text('aa5bbb17-cdb9-4618-abfa-db6dd2e00844')
+      expect(page).to have_text(guid)
     end
   end
   context 'mais de 50 rastreamentos' do
     it 'lista os 50 últimos registros' do
-      create_list(:tracker, 51)
+      trackers = create_list(:tracker, 51)
       visit '/trackers/index'
-      expect(Tracker).to receive(:order).at_most(50).times
+      expect(page).not_to have_text(trackers.first.guid)
+      expect(page).to have_text(trackers[1].guid)
+      expect(page).to have_text(trackers.last.guid)
     end
   end
 end
